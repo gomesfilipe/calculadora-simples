@@ -38,6 +38,15 @@ while True:
     elif event == '←':
         visor = b.apagaVisor(visor)
     
+    elif event == 'sin(x)' or event == 'cos(x)' or event == 'tan(x)' or event == 'x²' or event == '√x':
+        if event == 'sin(x)': funcao = b.seno
+        elif event == 'cos(x)': funcao = b.cosseno
+        elif event == 'tan(x)': funcao = b.tangente
+        elif event == 'x²': funcao = b.quadrado
+        elif event == '√x': funcao = b.raiz
+
+        visor = b.operacaoTipo1(funcao, visor)
+
     window['tela'].update(visor)
 
 

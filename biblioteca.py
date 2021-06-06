@@ -1,25 +1,34 @@
-from math import sin, cos, tan
+from math import sin, cos, tan, sqrt
 
 def soma(a, b):
-    return a + b
+    return str(float(a) + float(b))
 
 def subtracao(a, b):
-    return a - b
+    return str(float(a) - float(b))
 
 def multiplicacao(a, b):
-    return a * b
+    return str(float(a) * float(b))
 
 def divisao(a, b):
-    return a / b
+    return str(float(a) / float(b))
 
 def seno(a):
-    return sin(a)
+    return str(sin(float(a)))
 
 def cosseno(a):
-    return cos(a)
+    return str(cos(float(a)))
 
 def tangente(a):
-    return tan(a)
+    return str(tan(float(a)))
+
+def quadrado(a):
+    return str(float(a) ** 2)
+
+def raiz(a):
+    if float(a) < 0:
+        return 'Entrada inválida'
+    
+    return str(sqrt(float(a)))
 
 def operacaoTipo1(funcao, a): # Funções tipo 1 possuem 1 operando.
     return funcao(a)
@@ -38,15 +47,14 @@ def trocaSinalVisor(visor):
     return str(visor)
 
 def apagaVisor(visor):
-    print('chegou aq')
-    
     if len(visor) > 0:
         visor = visor[:len(visor) - 1]
 
-    if visor[len(visor) - 1] == '.':
-        visor = visor[:len(visor) - 1]
+    if len(visor) > 0:
+        if visor[len(visor) - 1] == '.':
+            visor = visor[:len(visor) - 1]
 
-    if visor == '-' or visor == '0' or len(visor) == 0:
+    if visor == '-' or visor == '0' or visor == '':
         visor = '0'
 
     return visor
