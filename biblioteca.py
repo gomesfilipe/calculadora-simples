@@ -58,3 +58,9 @@ def apagaVisor(visor):
         visor = '0'
 
     return visor
+
+def ehOperacaoTipo1(event):
+    if event == 'sin(x)' or event == 'cos(x)' or event == 'tan(x)' or event == 'x²' or event == '√x':
+        return True
+    
+    return False

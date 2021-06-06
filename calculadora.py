@@ -23,22 +23,23 @@ while True:
     if event == sg.WIN_CLOSED:
         break
     
-    elif event == '1' or event == '2' or event == '3' or event == '4' or event == '5' or event == '6' or event == '7' or event == '8' or event == '9' or event == '0':
+    elif event.isnumeric():
         if visor == '0':
             visor = event
         else:
+            if visor == 'Entrada inválida': visor = ''
             visor += event
 
     elif event == 'C':
         visor = b.resetaVisor()
 
-    elif event == '+/-':
+    elif event == '+/-' and visor != 'Entrada inválida':
         visor = b.trocaSinalVisor(visor)
 
-    elif event == '←':
+    elif event == '←' and visor != 'Entrada inválida':
         visor = b.apagaVisor(visor)
     
-    elif event == 'sin(x)' or event == 'cos(x)' or event == 'tan(x)' or event == 'x²' or event == '√x':
+    elif b.ehOperacaoTipo1(event) and visor != 'Entrada inválida':
         if event == 'sin(x)': funcao = b.seno
         elif event == 'cos(x)': funcao = b.cosseno
         elif event == 'tan(x)': funcao = b.tangente
