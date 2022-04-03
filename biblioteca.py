@@ -64,3 +64,9 @@ def ehOperacaoTipo1(event):
         return True
     
     return False
+
+def ehOperacaoTipo2(event):
+    if event == '+' or event == '-' or event == '*' or event == '/':
+        return True
+    
+    return False
