@@ -37,7 +37,7 @@ class Interface:
         ]
 
     def run_calculator(self):
-        window = sg.Window('Calculadora', self.layout)
+        window = sg.Window('Calculadora', self.layout, return_keyboard_events=True)
 
         while True:
             event, values = window.read() # captura eventos

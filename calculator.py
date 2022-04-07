@@ -1,5 +1,6 @@
 import re
 import regex as r
+
 class Calculator:
     def __init__(self):
         self.degree = True
@@ -53,7 +54,7 @@ class Calculator:
             self.reset_visor()
             self.last_buttom = char
         
-        elif char == '=':
+        elif char == '=' or char == '\r' or char == '\n': # \r para windows, \n para linux
             self.result_visor()
             self.visor = clear_zeros(self.visor)
             self.last_buttom = char
@@ -68,7 +69,7 @@ class Calculator:
         
         elif char == '+/-':
             if self.visor_only_number():
-                self.visor = str(float(self.visor) * (-1))
+                self.visor = clear_zeros(str(float(self.visor) * (-1.0)))
                 self.last_buttom = char
 
         elif char == '.':
