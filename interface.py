@@ -26,12 +26,13 @@ class Interface:
         self.div = sg.Button('/', size=(h, w), enable_events=True)
         self.backspace = sg.Button('←', size=(h, w), enable_events=True)
         self.reverse = sg.Button('+/-', size=(h, w), enable_events=True)
+        self.point = sg.Button('.', size=(h, w), enable_events=True)
 
         self.layout = [
             [self.visor],
             [self.seven, self.eight, self.nine, self.sum, self.reset], 
             [self.four, self.five, self.six, self.sub, self.backspace], 
-            [self.one, self.two, self.three, self.mult], 
+            [self.one, self.two, self.three, self.mult, self.point], 
             [self.reverse, self.zero, self.equals, self.div]
         ]
 
